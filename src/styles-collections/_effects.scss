@@ -1,0 +1,74 @@
+@mixin container-effect-3() {
+    left: 18%;
+    position: absolute;
+    top: 15%;
+    width: 140px;
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        animation: animo-x 8s cubic-bezier(.4, 0, .2, 1) infinite;
+    }
+
+    @keyframes animo-x {
+        50% {
+            animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transform: translateX(35px);
+        }
+    }
+}
+
+@mixin container-effect-4() {
+    position: absolute;
+    height: 450px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin container-effect-rotate-1() {
+    position: absolute;
+    bottom: -88px;
+    left: -14px;
+    z-index: -1;
+    animation: rotate360 40s linear infinite reverse;
+}
+
+@mixin container-effect-rotate-2() {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    z-index: -1;
+    animation: rotate360 40s linear infinite;
+}
+
+@mixin container-effect-rotate-360() {
+    @keyframes rotate360 {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(1turn);
+        }
+    }
+}
+
+@mixin container-effect-blink-animation() {
+    span {
+        .cursor {
+            font-size: larger;
+            font-weight: 900;
+            animation: blink .7s steps(1) infinite;
+            display: inline-block;
+            margin-left: -7px;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_experiencemixin' as experiencemixin;
+
+.experience {
+    padding: 100px 0;
+    background: rgba(7, 136, 255, .1);
+
+    .container {
+        .heading {
+            position: relative;
+            margin-bottom: 45px;
+    
+            h6 {
+                @include mixins.container-header-styled(400);
+                color: #707476;
+    
+                span {
+                    @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                }
+            }
+    
+            h2 {
+                @include mixins.font-style(40px, 700, 0);
+                text-transform: uppercase;
+            }
+        }
+    
+        .container__div1_flex-content {
+            @include mixins.container-flex-direction(flex, column);
+            flex-wrap: wrap;
+            margin: auto;
+    
+            mat-card.container__mat-card3_experience-description-box {
+                @include experiencemixin.container-experience-box();
+        
+                mat-card-content {
+                    @include experiencemixin.container-experience-card-content();
+                
+                    .container__div3_card-skill-box {
+                        margin: 24px 12px 0px 12px;
+                        width: 100%;
+    
+                        mat-card {
+                            color: white;
+                            background-color: #0788ff;
+                            border: none;
+    
+                            mat-card-header {
+                                padding: 20px 20px 0 20px;
+    
+                                h4 {
+                                    @include mixins.font-style(calc(1.5rem + .3vw), 700, 0 0 8px 0);
+                                }
+                            }
+    
+                            mat-card-content {
+                                @include mixins.container-flex-direction(flex, column);
+                                padding: 0 20px 0 20px;
+    
+                                span {
+                                    @include experiencemixin.container-experience-content-span();
+                                }
+    
+                                p {
+                                    @include mixins.font-style(16px, 400, 0 0 15px 0);
+                                }
+                            }
+    
+                            mat-card-footer {
+                                padding: 0 20px 20px 20px;
+    
+                                label {
+                                    @include experiencemixin.container-experience-skill-box-label();
+                                }
+                            }
+                        }
+                    }
+    
+                    .container__div4_text-skill-box {
+                        margin: 24px 12px 0px 12px;
+                        width: 100%;
+    
+                        h5 {
+                            @include mixins.font-style(32px, 700, 0 0 8px 0);
+                        }
+    
+                        p {
+                            margin: 0;
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include mixins.container-flex-sizing(12px);
+        display: block;
+        overflow: hidden;
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+    
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+            
+            mat-card.container__mat-card3_experience-description-box {
+                mat-card-content {
+                    .container__div3_card-skill-box {
+                        @include mixins.container-flex-percentage(28.3333%);
+                    }
+        
+                    .container__div4_text-skill-box {
+                        @include mixins.container-flex-percentage(63.6667%);
+                    }
+                }
+            }
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+    
+            .container__div1_flex-content {
+                mat-card.container__mat-card3_experience-description-box {
+                    mat-card-content {
+                        .container__div3_card-skill-box {
+                            @include mixins.container-flex-percentage(21%);
+                        }
+        
+                        .container__div4_text-skill-box {
+                            @include mixins.container-flex-percentage(73%);
+                        }
+                    }
+                }
+            }
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+<section id="home" class="home">
+    <div class="container container_text-box container_icons-box container_banner container_type-animation">
+        <div class="container__div1 container__div1_self-presentation-box">
+            <h6 [@fadeUp]="{ value: animationStates['fadeUp0'] || 'hidden', params: { duration: 1200, delay: 0 } }"
+                appAnimationOnScrollDirective
+                [animationStates]="animationStates"
+                [animationKey]="'fadeUp0'">
+                <span>Jenna Ortega</span>
+            </h6>
+            <h1 [@fadeUp]="{ value: animationStates['fadeUp100'] || 'hidden', params: { duration: 1200, delay: 100 } }"
+                appAnimationOnScrollDirective 
+                [animationStates]="animationStates" 
+                [animationKey]="'fadeUp100'">
+                Hay! I'm Jenna
+            </h1>
+            <h2 class="container__h2 container__h2_fade-up-animation"
+                [@fadeUp]="{ value: animationStates['fadeUp200'] || 'hidden', params: { duration: 1200, delay: 200 } }"
+                appAnimationOnScrollDirective 
+                [animationStates]="animationStates" 
+                [animationKey]="'fadeUp200'">
+                <span>{{ displayedText }} <span class="cursor">|</span></span>
+            </h2>
+            <p [@fadeUp]="{ value: animationStates['fadeUp300'] || 'hidden', params: { duration: 1200, delay: 300 } }"
+                appAnimationOnScrollDirective 
+                [animationStates]="animationStates" 
+                [animationKey]="'fadeUp300'">
+                Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all
+                exercise blessing. Indulgence way everything joy alteration boisterous the attachment.
+            </p>
+            <div class="container__div2"
+                [@fadeUp]="{ value: animationStates['fadeUp400'] || 'hidden', params: { duration: 1200, delay: 400 } }"
+                appAnimationOnScrollDirective 
+                [animationStates]="animationStates" 
+                [animationKey]="'fadeUp400'">
+                <button 
+                    mat-raised-button 
+                    color="primary"
+                    (click)="scrollTo('contact')">
+                    <span>get in touch</span>
+                    <mat-icon 
+                        aria-hidden="false" 
+                        aria-label="Example arrow-right icon"
+                        svgIcon="arrow-right"></mat-icon>
+                </button>
+                <div class="container__div3 container__div3_social-media-box"
+                    [@zoomIn]="{ value: animationStates['zoomIn300-social-media-box'] || 'hidden', params: { duration: 1200, delay: 300 } }"
+                    appAnimationOnScrollDirective 
+                    [animationStates]="animationStates" 
+                    [animationKey]="'zoomIn300-social-media-box'">
+                    <a href="#" class="facebook">
+                        <mat-icon aria-hidden="false" aria-label="Example facebook icon" svgIcon="facebook"></mat-icon>
+                    </a>
+                    <a href="#" class="dribbble">
+                        <mat-icon aria-hidden="false" aria-label="Example linked_camera icon" fontIcon="linked_camera" svgIcon="instagram"></mat-icon>
+                    </a>
+                    <a href="#" class="linkedin">
+                        <mat-icon aria-hidden="false" aria-label="Example image_search icon" fontIcon="image_search" svgIcon="linkedin"></mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container__div4 container__div4_self-banner">
+            <img src="assets/banner/home-banner.png" alt="Portfolio Banner">
+        </div>
+    </div>
+</section>

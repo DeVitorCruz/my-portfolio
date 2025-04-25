@@ -1,0 +1,58 @@
+<section id="projects" class="projects">
+    <div class="container container_text-box container_exhibition-content container_carousel-element-box">
+        <div class="container__div4 container__div4_heading-box">
+            <h6
+                [@fadeRight]="{ value: animationStates['fadeRight200-header-projects'] || 'hidden', params: { duration: 1200, delay: 200 } }"
+                appAnimationOnScrollDirective
+                [animationStates]="animationStates"
+                [animationKey]="'fadeRight200-header-projects'"
+            >
+                <span>My Work</span>
+            </h6>
+            <h2>RECENT PROJECT</h2>
+        </div>
+        <div class="container__div1 container__div1_recent-project-box">
+            <div class="slick-content">
+                <div class="container__div2 container__div2_carousel-content">
+                    <div class="container__div3 container__div3_project-box">
+                        <div *ngFor="let project of projects">
+                            <div class="project-box">
+                                <div class="project-media">
+                                    <img [src]="project.image" alt="Project Preview">
+                                    <span class="gallery-link">
+                                        <mat-icon 
+                                            aria-hidden="false" 
+                                            aria-label="solid plus icon" 
+                                            fontIcon="home"
+                                            svgIcon="plus-solid" 
+                                            (click)="openImageModal(project.image)"></mat-icon>
+                                    </span>
+                                </div>
+                                <div class="project-body">
+                                    <div class="text">
+                                        <h5>{{ project.title }}</h5>
+                                        <span>{{ project.description }}</span>
+                                    </div>
+                                    <div 
+                                        class="link" 
+                                        (click)="openImageModal(project.image)">
+                                        <span>
+                                            <mat-icon aria-hidden="false" aria-label="Arrow right" fontIcon="home"
+                                                svgIcon="arrow-right"></mat-icon>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-content">
+                    <button mat-button class="container__button1"
+                        (click)="prevSlide(selectorCollection.projectSelector)">&#10094;</button>
+                    <button mat-button class="container__button2"
+                        (click)="nextSlide(selectorCollection.projectSelector, this.projects)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

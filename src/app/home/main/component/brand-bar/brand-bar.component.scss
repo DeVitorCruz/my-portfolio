@@ -1,0 +1,69 @@
+@use '_breakpoints' as breakpoints;
+
+.brand-bar {
+    background: rgba(7, 136, 255, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include breakpoints.respond(md) {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+
+        mat-toolbar-row {
+            max-width: 720px;
+        }
+    }
+
+    mat-toolbar-row {
+        display: block;
+        align-content: center;
+        margin: 0 auto;
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+        
+            .logo-content {
+                width: 329px !important;
+            }
+        }
+
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+
+            .logo-content {
+                width: 292px !important;
+            }
+        }
+
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+
+        .slick-slider {
+            .slick-list {
+                overflow: hidden;
+
+                .slick-track {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .logo-content {
+                        padding: 16px 0;
+                        width: 270px;
+
+                        span {
+                            width: 100%;
+                            height: auto;
+                            vertical-align: middle;
+                            padding: 0 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

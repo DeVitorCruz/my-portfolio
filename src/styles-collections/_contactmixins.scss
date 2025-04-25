@@ -1,0 +1,25 @@
+@mixin container-info-box() {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    .contact-banner {
+        display: none;
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+@mixin container-social-media-items-color($dribble-color: #f26798, $linkedin-color: #1275b1) {
+    .dribbble {
+        background-color: #f26798;
+    }
+
+    .linkedin {
+        background-color: #1275b1;
+    }
+}

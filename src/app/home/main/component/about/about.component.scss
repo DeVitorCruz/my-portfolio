@@ -1,0 +1,143 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_aboutmixins' as aboutmixins; 
+@use '_effects' as effects;
+
+.about {
+    padding-top: 32px;
+    padding-bottom: 100px;
+
+    .container {
+        @include mixins.container-flex-sizing(20px);
+        position: relative;
+        z-index: 1;
+
+        .affect-1-rotate {
+            @include effects.container-effect-rotate-1();
+        }
+    
+        .affect-2-rotate {
+            @include effects.container-effect-rotate-2();
+        }
+    
+        @include effects.container-effect-rotate-360();
+    
+        .container__div5_flex-content {
+            @include mixins.flex-center(center, center);
+            flex-wrap: wrap;
+    
+            .container__div4_self-banner {
+                @include aboutmixins.container-self-banner();
+            }
+    
+            .container__div1_self-presentation-box {
+                flex: 1;
+                padding: 0 48px;
+                margin-top: 48px;
+    
+                .container__div6 {
+                    margin-bottom: 25px;
+    
+                    h6 {
+                        @include mixins.container-header-styled(400);
+    
+                        span {
+                            @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                        }
+                    }
+    
+                    h2 {
+                        @include mixins.font-style(40px, 700, 0);
+                        text-transform: uppercase;
+    
+                        span {
+                            color: #0788ff;
+                        }
+                    }
+                }
+    
+                p {
+                    font-size: 1rem;
+                    color: white;
+                }
+    
+                .container__div2_review-box {
+                    display: flex;
+                    padding-top: 15px;
+                    padding-bottom: 45px;
+    
+                    div {
+                        @include mixins.container-flex-direction();
+                        @include aboutmixins.container-about-review-box();
+                    }
+                }
+    
+                .container__div3 {
+                    @include aboutmixins.container-about-self-presentation-btn();
+                }
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+    
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+            flex-direction: column;
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+            
+            .container__div1_self-presentation-box {
+                padding: 0 3rem !important;
+            }
+            
+            .container__div4_self-banner,
+            .container__div1_self-presentation-box {
+                @include mixins.container-flex-percentage(50%);
+            }
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+
+            .container__div4_self-banner,
+            .container__div1_self-presentation-box {
+                @include mixins.container-flex-percentage(41.6666667%);
+            }
+        
+            .container__div1_self-presentation-box {        
+                p {
+                    font-weight: 400;
+                    line-height: 1.6;
+                }
+        
+                .container__div2_review-box {
+                    div {
+                        h3 {
+                            font-size: 1.75rem !important;
+                        }
+        
+                        label {
+                            font-size: 13px;
+                            line-height: 130%;
+                        }
+                    }
+                }
+            }
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+    
+        @include breakpoints.respond(max-xl) {
+            .affect-1-rotate,
+            .affect-2-rotate {
+                display: none;
+            }
+        }
+    }
+}

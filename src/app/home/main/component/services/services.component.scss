@@ -1,0 +1,111 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_servicesmixin' as servicesmixin;
+
+.services {
+    padding: 80px 0;
+
+    .container {
+        @include mixins.container-flex-sizing(12px);
+        overflow: hidden;
+
+        .heading {
+            position: relative;
+            margin-bottom: 45px;
+    
+            h6 {
+                @include mixins.container-header-styled(400);
+                color: #666;
+    
+                span {
+                    @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                }
+            }
+    
+            h2 {
+                @include mixins.font-style(40px, 700, 0);
+                line-height: 1.2;
+                text-transform: uppercase;
+    
+                span {
+                    color: #0788ff;
+                }
+            }
+        }
+        
+        .container__div2_grid-content {
+            @include mixins.center();
+            @include servicesmixin.container-service-grid-content();
+    
+            .container__div1_recent-service-box {
+                margin-top: 3rem;
+    
+                mat-card.container__mat-card3_skill-box {
+                    @include servicesmixin.container-card-skill-box();
+            
+                    mat-card-content {
+                        padding: 0;
+                        z-index: 1;
+    
+                        mat-icon {
+                            @include servicesmixin.container-services-icon();
+                        }
+    
+                        h5 {
+                            @include mixins.font-style(1.25rem, 500, 0 0 .5rem 0);
+                            color: white;
+                            line-height: 1.2;
+                        }
+    
+                        p {
+                            @include mixins.font-style(14px, 500, 0 0 15px 0);
+                            color: white;
+                            line-height: 140%;
+                            opacity: .65;
+                        }
+                    }
+    
+                    mat-card-footer {
+                        @include servicesmixin.container-card-footer-service();
+                    }
+                }
+    
+                .mat-mdc-card-outlined::after {
+                    background: linear-gradient(180deg, rgba(4, 12, 22, 0), #040c16);
+                }
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+
+            .container__div2_grid-content {
+                .container__div1_recent-service-box {
+                    @include mixins.container-flex-percentage(50%);
+                }
+            }
+        }
+    
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+
+            .container__div2_grid-content {
+                .container__div1_recent-service-box {
+                    @include mixins.container-flex-percentage(25%);
+                }
+            }
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+    }
+}

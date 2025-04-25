@@ -1,0 +1,120 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_projectsmixin' as projectsmixin;
+
+.projects {
+    @include projectsmixin.container-project-content();
+    
+    .container {
+        @include mixins.container-flex-sizing(12px);
+
+        .container__div4_heading-box {
+            position: relative;
+            padding: 0 0 0 12px;
+            margin-bottom: 35px;
+    
+            h6 {
+                @include mixins.container-header-styled(400);
+    
+                span {
+                    @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                }
+            }
+    
+            h2 {
+                @include mixins.font-style(35px, 700, 0);
+                text-transform: uppercase;
+            }
+        }
+    
+        .container__div1_recent-project-box {
+            text-align: left;
+            width: 95vw;
+    
+            .slick-content {
+                position: relative;
+                display: block;
+                box-sizing: border-box;
+    
+                .container__div2_carousel-content {
+                    @include mixins.flex-center(left, center);
+                    @include projectsmixin.container-carousel-content();
+            
+                    .container__div3_project-box {
+                        display: flex;
+                        gap: 24px;
+                        transition: transform 0.5s ease-in-out;
+    
+                        div {
+                            width: 416px;
+                            padding: 0 12px;
+    
+                            .project-box {
+                                @include projectsmixin.container-project-box();
+
+                                &.project-box:hover {
+                                    .project-media {
+                                        img {
+                                            transform: scale(1.05);
+                                        }
+    
+                                        .gallery-link {
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+    
+                                .project-media {
+                                    @include projectsmixin.container-project-media();
+                                }
+    
+                                .project-body {
+                                    @include projectsmixin.container-project-media-body();
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .button-content {
+                    padding: 35px 0 32px 32px;
+                    margin-bottom: 16px;
+    
+                    .container__button1,
+                    .container__button2 {
+                        @include projectsmixin.container-project-btn();
+                    }
+    
+                    .container__button1 {
+                        left: 0;
+                    }
+    
+                    .container__button2 {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+        
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+            flex-direction: column;
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }  
+    }
+}

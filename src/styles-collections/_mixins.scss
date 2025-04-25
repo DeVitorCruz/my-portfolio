@@ -1,0 +1,98 @@
+// Flex Center (both axis)
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Flex with custom justification and alignment
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Flex-wrap helper
+@mixin flex-wrap($justify: flex-start, $gap: 1rem) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin container-fixed-sizing {
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+@mixin container-flex-sizing($padding: 12px) {
+    margin: 0 auto;
+    padding: 0 $padding;
+}
+
+@mixin container-flex-fixed-300 {
+    flex: 1;
+    min-width: 300px;
+}
+
+@mixin container-flex-percentage($width: 50%) {
+    flex: 0 0 auto !important;
+    width: $width !important;
+}
+
+@mixin container-header-styled($font-weight: 400) {
+    font-size: 16px;
+    font-weight: $font-weight;
+    letter-spacing: 4px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+@mixin container-header-styled-span($font-color: white, $background-color: rgba(7, 136, 255, .2)) {
+    display: inline-block;
+    color: white;
+    background-color: rgba(7, 136, 255, .2);
+    border-radius: 4px;
+    padding: 5px 12px;
+}
+
+@mixin container-form-btn($font-weight: 500, $background-color: #0788ff) {
+    color: white;
+    font-weight: $font-weight;
+    text-transform: uppercase;
+    border: 2px solid $background-color;
+    background-color: $background-color;
+}
+
+@mixin content-card($color: white, $border-color:  #0788ff, $background-color: rgba(7, 136, 255, .1)) {
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    border: 1px solid rgba(#0788ff, .2);
+    border-radius: .375rem;
+    background-color: rgba(7, 136, 255, .1);
+}
+
+@mixin font-style($font-size: 40px, $font-weight: 500, $margin: 0 0 8px 0) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    margin: $margin;
+}
+
+@mixin container-icon-item(
+    $color: white, 
+    $border-color: white, 
+    $background-color: #1877f2
+) {
+    color: $color;
+    border: 2px solid $border-color;
+    background-color: #1877f2;
+    padding: 9px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+@mixin container-flex-direction($display: flex, $flex-direction: column) {
+    display: flex;
+    flex-direction: column;
+}

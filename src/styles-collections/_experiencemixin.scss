@@ -1,0 +1,32 @@
+@mixin container-experience-box() {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    margin-top: 24px;
+    background: rgba(7, 136, 255, .1);
+    border: none;
+}
+
+@mixin container-experience-card-content() {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    padding: 0 25px 25px 13px;
+}
+
+@mixin container-experience-content-span() {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+@mixin container-experience-skill-box-label() {
+    color: #040c16;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    opacity: 1;
+}

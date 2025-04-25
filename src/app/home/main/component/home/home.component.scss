@@ -1,0 +1,102 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_homemixins' as homemixins;
+@use '_effects' as effects;
+
+.home {
+    padding-top: 95.594px;
+    box-sizing: border-box;
+
+    .container {
+        @include mixins.flex-center(space-between, center);
+        @include mixins.container-flex-sizing(12px);
+        flex-wrap: wrap;
+        
+        .container__div1_self-presentation-box {
+            @include mixins.container-flex-fixed-300;
+            padding: 0 12px;
+    
+            h6 {
+                @include mixins.container-header-styled(500);
+    
+                span {
+                    @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                }
+            }
+    
+            h1 {
+                @include mixins.font-style(70px, 700, 10px 0);
+                text-transform: uppercase;
+            }
+    
+            h2 {
+                @include mixins.font-style(70px, 700, 0 0 30px 0);
+                text-transform: uppercase;
+                color: #0788ff;
+            }
+    
+            p {
+                @include homemixins.self-presentation-box-p();
+            }
+    
+            .container__div2 {
+                @include homemixins.self-presentation-box-contact-interact();
+            }
+    
+            .container__h2_fade-up-animation {
+                @include effects.container-effect-blink-animation();
+            }
+        }
+        
+        .container__div4_self-banner {
+            @include mixins.container-flex-fixed-300;
+            text-align: center;
+    
+            img {
+                width: 100%;
+                height: auto;
+                vertical-align: middle;
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+            flex-direction: column;
+        }
+
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+            flex-direction: row;
+        }
+
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+
+        @include breakpoints.respond(max-xl) {
+            .container__div1_self-presentation-box {
+                h1 {
+                    font-size: 45px !important;
+                }
+        
+                h2 {
+                    font-size: 45px !important;
+                    margin: 0 0 20px 0 !important;
+                }
+        
+                p {
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+}
+

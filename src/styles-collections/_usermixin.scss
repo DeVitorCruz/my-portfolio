@@ -1,0 +1,37 @@
+@mixin container-user-mixin-span() {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+    opacity: .5;
+}
+
+@mixin container-carousel-content() {
+    display: flex;
+    width: 100%;
+    transition: transform .5s ease-in-out;
+}
+
+@mixin container-info-box() {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@mixin container-user-content() {
+    display: flex;
+    margin: 0 auto 30px;
+    width: 130px;
+    height: 130px;
+    border: 8px solid hsla(0, 0%, 100%, .2);
+    border-radius: 50%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

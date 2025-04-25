@@ -1,0 +1,85 @@
+<section id="contact" class="contact">
+    <div class="container container_text-box container_form-box">
+      <mat-card class="container__mat-card1" color="none">
+        <mat-card-header>
+          <div class="first-column"></div>
+          <div 
+            class="secont-column"
+            [@fadeLeft]="{ value: animationStates['fadeLeft200-contact-first-column'] || 'hidden', params: { duration: 1200, delay: 200 } }"                  
+            appAnimationOnScrollDirective
+            [animationStates]="animationStates"
+            [animationKey]="`fadeLeft200-contact-first-column`">
+            <h5>Let's Discuss Your Project</h5>
+            <p>Always available for freelancing if the right project comes along, Feel free to contract me.</p>
+          </div>
+        </mat-card-header>            
+        <mat-card-content>
+            <div class="container__div8 container__div8_contact-form-box">
+              <form 
+                action="https://formsubmit.co/bd70c6d6c9610564f672ea86dd4cba0f"
+                method="POST"
+                target="_blank"
+                >
+                <mat-form-field class="your-name" appearance="outline">
+                  <mat-label>Your Name</mat-label>
+                  <input matInput type="text" name="name" required>
+                </mat-form-field>
+                <mat-form-field class="e-mail" appearance="outline">
+                  <mat-label>Your E-mail</mat-label>
+                  <input matInput type="email" name="email" required>
+                </mat-form-field>
+                <mat-form-field class="subject" appearance="outline">
+                  <mat-label>Subject</mat-label>
+                  <input matInput type="text" name="subject" required>
+                </mat-form-field>
+                <mat-form-field class="your-message" appearance="outline">
+                  <mat-label>Your Message</mat-label>
+                  <textarea matInput name="message" rows="5" required></textarea>
+                </mat-form-field>
+                <button 
+                  mat-raised-button 
+                  color="primary"
+                  type="submit"
+                  >Send Message</button>
+              </form>
+            </div>
+            <div class="container__div3 container__div3_info-box">
+              <div class="contact-banner">
+                <img src="assets/banner/contact/contact-us.png" alt="">
+              </div>
+              <div 
+                class="container__div4 container__div4_contact-info-box"
+                [@fadeUp]="{ value: animationStates['fadeUp200-contact-description'] || 'hidden', params: { duration: 1200, delay: 200 } }"                  
+                appAnimationOnScrollDirective
+                [animationStates]="animationStates"
+                [animationKey]="`fadeUp200-contact-description`">
+                <div class="container__div6 container__div6_contact-e-mail-box">
+                  <label for="e-mail">Write an e-mail</label>
+                  <a href="#">sample&#64;domain.com</a>
+                </div>
+                <div class="container__div7 container__div7_contact-phone-number-box">
+                  <label for="phone-number">Write an e-mail</label>
+                  <a href="#">+044 9696 9696 3636</a>
+                </div>
+              </div>
+              <div 
+                class="container__div5 container__div5_social-media-info-box"
+                [@zoomIn]="{ value: animationStates['zoomIn200-contact-social-media-box'] || 'hidden', params: { duration: 1200, delay: 300 } }"                  
+                appAnimationOnScrollDirective
+                [animationStates]="animationStates"
+                [animationKey]="`zoomIn200-contact-social-media-box`">
+                <a href="#" target="_balnk" class="facebook">
+                  <mat-icon aria-hidden="false" aria-label="facebook" fontIcon="home" svgIcon="facebook"></mat-icon>
+                </a>
+                <a href="#" target="_balnk" class="dribbble">
+                  <mat-icon aria-hidden="false" aria-label="facebook" fontIcon="home" svgIcon="instagram"></mat-icon>
+                </a>
+                <a href="#" target="_balnk" class="linkedin">
+                  <mat-icon aria-hidden="false" aria-label="facebook" fontIcon="home" svgIcon="linkedin"></mat-icon>
+                </a>
+              </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>

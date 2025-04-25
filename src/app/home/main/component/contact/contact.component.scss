@@ -1,0 +1,187 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_formixins' as formixins;
+@use '_contactmixins' as contactmixins;
+
+.contact {
+    padding: 100px 0;
+
+    .container {
+        @include mixins.flex-center(space-between, center);
+        @include mixins.container-flex-sizing(12px);
+        overflow: hidden;
+        
+        mat-card.container__mat-card1 {
+            @include mixins.content-card(white, #0788ff, rgba(7, 136, 255, .1));
+            width: 1296px;
+        
+            mat-card-header {
+                flex-direction: row;
+                padding: 1.5rem;
+                border-bottom: 1px solid rgba(#0788ff, .2);
+    
+                .secont-column {
+                    h5 {
+                        @include mixins.font-style(40px, 500, 0 0 8px 0);
+                    }
+    
+                    p {
+                        @include mixins.font-style(17px, 400, 0);
+                        max-width: 550px;
+                        opacity: .85;
+                    }
+                }
+            }
+    
+            mat-card-content {
+                @include mixins.flex-center(left, center);
+                flex-wrap: wrap;
+                padding: 1.5rem;
+                background-color: rgba(7, 136, 255, .1);
+    
+                .container__div8_contact-form-box {
+                    max-width: 100%;
+                    width: 100%;
+    
+                    form {
+                        @include formixins.form-grid;
+
+                        button {
+                            @include mixins.container-form-btn(500, #0788ff);
+                        }
+                    }
+                }
+    
+                .container__div3_info-box {
+                    @include mixins.flex-center(left, stretch);
+                    @include contactmixins.container-info-box();
+                    
+                    .container__div4_contact-info-box {
+                        padding: 20px 0 40px 0;
+    
+                        .container__div6_contact-e-mail-box,
+                        .container__div7_contact-phone-number-box {
+                            @include mixins.container-flex-direction(flex, column);
+                            padding: 20px 0 0 0;
+
+                            a {
+                                @include mixins.font-style(22px, 600, 0);
+                            }
+                        }
+                    }
+    
+                    .container__div5_social-media-info-box {
+                        display: flex;
+    
+                        a {
+                            @include mixins.container-icon-item(white, white, #1877f2);                
+                            @include mixins.container-flex-direction(flex, column);
+                            justify-content: center;
+                        }
+                        
+                        @include contactmixins.container-social-media-items-color(#f26798, #1275b1);
+                    }
+                }
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+    
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+            
+            mat-card.container__mat-card1 {
+                mat-card-content {
+                    .container__div3_info-box {
+                        padding-right: 3.0rem !important;
+                    }
+                }
+            }
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+
+            mat-card.container__mat-card1 {
+                mat-card-header {
+                    flex-direction: row;
+                    padding: 3rem !important;
+        
+                    .first-column {
+                        @include mixins.container-flex-percentage(33.3333%);
+                    }
+        
+                    .secont-column {
+                        @include mixins.container-flex-percentage(66.6667%);
+        
+                        h5 {
+                            @include mixins.font-style(40px, 500, 0 0 8px 0);
+                        }
+        
+                        p {
+                            @include mixins.font-style(17px, 400, 0);
+                            max-width: 550px;
+                            opacity: .85;
+                        }
+                    }
+                }
+        
+                mat-card-content {
+                    flex-direction: row-reverse;
+                    padding: 3rem !important;
+        
+                    .container__div8_contact-form-box {
+                        @include mixins.container-flex-percentage(66.6667%);
+                    }
+        
+                    .container__div3_info-box {
+                        @include mixins.container-flex-percentage(33.3333%);
+                        @include mixins.flex-center(left, stretch);
+                        flex-direction: column;
+        
+                        .contact-banner {
+                            display: block !important;
+                            margin-top: -200px;
+                        }
+        
+                        .container__div4_contact-info-box {
+                            padding: 20px 0 40px 0;
+        
+                            .container__div6_contact-e-mail-box,
+                            .container__div7_contact-phone-number-box {
+                                @include mixins.container-flex-direction(flex, column);
+                                padding: 20px 0 0 0;
+        
+                                a {
+                                    @include mixins.font-style(22px, 600, 0);
+                                }
+                            }
+                        }
+        
+                        .container__div5_social-media-info-box {
+                            display: flex;
+        
+                            a {
+                                @include mixins.flex-center(center, center);
+                                @include mixins.container-icon-item(white, white, #1877f2);
+                                flex-direction: column;
+                            }
+        
+                            @include contactmixins.container-social-media-items-color(#f26798, #1275b1);
+                        }
+                    }
+                }
+            }
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+    }
+}

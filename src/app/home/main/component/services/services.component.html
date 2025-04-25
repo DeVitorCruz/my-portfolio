@@ -1,0 +1,43 @@
+<section id="services" class="services">
+    <div class="container container_text-box container_exhibition-content container_grid-element-box">
+        <div class="heading">
+            <h6>
+                <span
+                    [@fadeRight]="{value: animationStates['fadeRight200-services-grid-element-box'] || 'hidden', params: { duration: 1200, delay: 200 }}"
+                    appAnimationOnScrollDirective 
+                    [animationStates]="animationStates"
+                    [animationKey]="'fadeRight200-services-grid-element-box'">
+                    SERVICES</span>
+            </h6>
+            <h2>
+                DESIGN
+                <span>SERVICES</span>
+                I AM PROVIDING
+            </h2>
+        </div>
+        <div class="container__div2 container__div2_grid-content">
+            <div class="container__div1 container__div1_recent-service-box" *ngFor="let skill of skills; let i = index">
+                <mat-card class="container__mat-card3 container__mat-card3_skill-box" appearance="outlined"
+                    [attr.data-index]="i"
+                    [@fadeLeft]="{ value: animationStates['fadeLeft' + i] || 'hidden', params: { duration: 1200, delay: i * 100 } }"
+                    appAnimationOnScrollDirective
+                    [animationStates]="animationStates" 
+                    [animationKey]="`fadeLeft${i}`"
+                    [style.background-image]="'url(' + skill.imageUrl + ')'"
+                    >
+                    <mat-card-content>
+                        <mat-icon 
+                            aria-hidden="false" 
+                            aria-label="Example home icon" 
+                            [fontIcon]="skill.icon"></mat-icon>
+                        <h5>{{ skill.title }}</h5>
+                        <p>{{ skill.description }}</p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <mat-progress-bar mode="determinate" [value]="skill.rate"></mat-progress-bar>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

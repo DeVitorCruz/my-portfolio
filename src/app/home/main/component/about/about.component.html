@@ -1,0 +1,89 @@
+<section id="about" class="about">
+    <div class="container container_display-content container_icons-box container_banner">
+      <div class="affect-1-rotate">
+        <img 
+          src="assets/circle/effect-1.svg" 
+          alt="" 
+          [@zoomIn]="{ value: animationStates['zoomIn300-effect-1'] || 'hidden', params: { duration: 1200, delay: 300 } }" 
+          appAnimationOnScrollDirective
+          [animationStates]="animationStates"
+          [animationKey]="'zoomIn300-effect-1'">
+      </div>
+      <div class="affect-2-rotate">
+        <img 
+          src="assets/circle/effect-2.svg" 
+          alt="" 
+          [@zoomIn]="{value: animationStates['zoomIn300-effect-2'] || 'hidden', params: { duration: 1200, delay: 300 }}" 
+          appAnimationOnScrollDirective
+          [animationStates]="animationStates"
+          [animationKey]="'zoomIn300-effect-2'">
+      </div>
+      <div class="container__div5 container__div5_flex-content">
+        <div class="container__div4 container__div4_self-banner" 
+          [@fadeRight]="{ value: animationStates['fadeRight500-self-banner'] || 'hidden', params: { duration: 1200, delay: 500 } }" 
+          appAnimationOnScrollDirective
+          [animationStates]="animationStates"
+          [animationKey]="'fadeRight500-self-banner'">
+          <div>
+            <img src="assets/card/about-banner.png" alt="Portfolio Banner">
+          </div>
+        </div>
+        <div class="container__div1 container__div1_self-presentation-box" 
+          [@fade]="{value: animationStates['fade400-brand-bar'] || 'hidden', params: { duration: 1200, delay: 400 }}" 
+          appAnimationOnScrollDirective
+          [animationStates]="animationStates"
+          [animationKey]="'fade400-brand-bar'">
+          <div class="container__div6">
+            <h6>
+              <span>About Us</span>
+            </h6>
+            <h2>
+              I AM AVAILABLE FOR
+              <span>UI UX DESIGN</span>
+              PROJECTS
+            </h2>
+          </div>
+          <p>
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+            Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H.Rackham.
+          </p>
+          <div class="container__div2 container__div2_review-box">
+            <div>
+              <h3>
+                280
+                <span>+</span>
+              </h3>
+              <label for="google review">Google Review</label>
+            </div>
+            <div>
+              <h3>
+                15
+                <span>+</span>
+              </h3>
+              <label for="years experience">Years Experience</label>
+            </div>
+            <div>
+              <h3>
+                49
+                <span>+</span>
+              </h3>
+              <label for="awward winning">Awward Winning</label>
+            </div>
+          </div>
+          <div class="container__div3">
+            <button 
+              mat-raised-button 
+              color="primary"
+              (click)="scrollTo('contact')">
+                <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Example arrow-right icon" 
+                    svgIcon="arrow-right"
+                    ></mat-icon>
+                GET IN TOUCH  
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

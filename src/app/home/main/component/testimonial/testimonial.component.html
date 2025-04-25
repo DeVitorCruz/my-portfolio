@@ -1,0 +1,55 @@
+<section id="testimonial" class="testimonial">
+    <div class="effect-3">
+        <img src="assets/circle/effect-3.svg" alt="">
+    </div>
+    <div class="effect-4">
+        <img src="assets/circle/effect-4.svg" alt="">
+    </div>
+    <div
+        class="container container_text-box container_exhibition-content container_carousel-element-box container_button-box">
+        <div class="container__div1 container__div1_testimonial-box">
+            <h6 [@fadeUp]="{ value: animationStates['fadeUp200-testimonial'] || 'hidden', params: { duration: 1200, delay: 200 } }"
+                appAnimationOnScrollDirective
+                [animationStates]="animationStates" 
+                [animationKey]="`fadeUp200-testimonial`">
+                <span>Testimonial</span>
+            </h6>
+            <h2>Over
+                <span>8,000+</span>
+                <br>
+                PEOPLE TRUST ME
+            </h2>
+        </div>
+        <div class="container__div2"
+            [@fade]="{ value: animationStates['fade200-testimonial'] || 'hidden', params: { duration: 1200, delay: 200 } }"
+            appAnimationOnScrollDirective
+            [animationStates]="animationStates" 
+            [animationKey]="`fade200-testimonial`">
+            <div class="container__div3 container__div3_carousel-content" [style.transform]="getTestimonialTranslate()">
+                <div 
+                    class="container__div4 container__div4_testimonial-info-box"
+                    *ngFor="let testimonial of testimonials">
+                    <div class="container__div5 container__div5_user-content">
+                        <img [src]="testimonial.imagePath" alt="{{ testimonial.name }}">
+                    </div>
+                    <div class="container__div6 container__div6_feedback-box">
+                        <p>{{ testimonial.feedback }}</p>
+                    </div>
+                    <div class="container__div7 container__div7_user-info-box">
+                        <h6>{{ testimonial.name }}</h6>
+                        <span>{{ testimonial.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div 
+            class="container__div8 container__div8_button-box"
+            [@fade]="{ value: animationStates['fade200-testimonial-btn'] || 'hidden', params: { duration: 1200, delay: 200 } }"
+            appAnimationOnScrollDirective
+            [animationStates]="animationStates" 
+            [animationKey]="`fade200-testimonial-btn`">
+            <button mat-button class="container__button1" (click)="prevTestimonial()">&#10094;</button>
+            <button mat-button class="container__button2" (click)="nextTestimonial()">&#10095;</button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,107 @@
+@use '_mixins' as mixins;
+@use '_breakpoints' as breakpoints;
+@use '_effects' as effects;
+@use '_usermixin' as usermixin;
+
+.testimonial {
+    padding-top: 100px;
+    position: relative;
+
+    .effect-3 {
+        @include effects.container-effect-3();
+    }
+
+    .effect-4 {
+        @include effects.container-effect-4();
+    }
+
+    .container {
+        @include mixins.container-flex-sizing(12px);
+        overflow: hidden;
+
+        .container__div1_testimonial-box {
+            text-align: center !important;
+            margin-bottom: 45px;
+    
+            h6 {
+                @include mixins.container-header-styled(400);
+                color: #707476;
+    
+                span {
+                    @include mixins.container-header-styled-span(white, rgba(7, 136, 255, .2));
+                }
+            }
+    
+            h2 {
+                @include mixins.font-style(40px, 700, 0);
+                text-transform: uppercase;
+    
+                span {
+                    color: #0788ff;
+                }
+            }
+        }
+    
+        .container__div2 {
+            margin: 0px -11px;
+    
+            .container__div3_carousel-content {
+                @include usermixin.container-carousel-content();
+    
+                .container__div4_testimonial-info-box {
+                    @include usermixin.container-info-box();
+                
+                    .container__div5_user-content {
+                        @include usermixin.container-user-content();
+                    }
+    
+                    .container__div6_feedback-box {
+                        @include mixins.font-style(18px, 500, 0 0 25px 0);
+                        color: white;
+    
+                        p {
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+    
+                    .container__div7_user-info-box {
+                        h6 {
+                            @include mixins.font-style(20px, 500, 0 0 8px);
+                            text-transform: uppercase;
+                        }
+    
+                        span {
+                            @include usermixin.container-user-mixin-span();
+                        }
+                    }
+                }
+            }
+        }
+    
+        .container__div8_button-box {
+            @include mixins.flex-center(center, center);
+            @include mixins.container-flex-sizing(150px);
+        }
+
+        @include breakpoints.respond(sm) {
+            max-width: 540px;
+        }
+    
+        @include breakpoints.respond(md) {
+            max-width: 720px;
+        }
+    
+        @include breakpoints.respond(lg) {
+            max-width: 960px;
+        }
+    
+        @include breakpoints.respond(xl) {
+            max-width: 1140px;
+        }
+    
+        @include breakpoints.respond(xxl) {
+            max-width: 1320px;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@mixin container-about-review-box() {
+    color: white;
+    margin: 0 10px 0 0;
+    padding: 20px;
+    background: hsla(0, 0%, 100%, .05);
+    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    border-radius: 8px;
+
+    h3 {
+        font-size: calc(1.3rem + .6vw);
+        margin: 0 0 8px;
+    }
+
+    label {
+        font-size: 13px;
+        line-height: 130%;
+    }
+}
+
+@mixin container-about-self-presentation-btn() {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+
+    button {
+        align-items: center;
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0 30px;
+        height: 55.594px;
+        background-color: #0788ff;
+        border: 2px solid #0788ff;
+        transition: all .35s ease;
+
+        &:hover {
+            background-color: #040c16;
+            border: 2px solid white;
+        }
+    }
+}
+
+@mixin container-self-banner() {
+    text-align: center;
+    padding: 0 12px;
+    margin-top: 48px;
+    opacity: 0;
+
+    div {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

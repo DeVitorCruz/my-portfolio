@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+$custom-color-text: rgba(255, 255, 255);
+$custom-bg-gradient: linear-gradient(90deg,
+    rgb(7, 35, 59) 1.67%,
+    rgb(4, 29, 52) 39.95%,
+    rgb(4, 25, 45) 58.24%,
+    rgb(4, 14, 24) 80.28%,
+    rgb(5, 12, 22) 101.48%
+);
+
+:root {
+    @include mat.toolbar-overrides((
+        container-background-color: $custom-bg-gradient,
+        container-text-color: $custom-color-text,
+    ));
+    @include mat.button-overrides((
+        text-label-text-color: $custom-color-text
+    ));
+    @include mat.dialog-overrides((
+        container-color: rgba(0, 0, 0, .5),
+    ));
+}
+
+body {
+    color: $custom-color-text;
+    background: $custom-bg-gradient;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    label {
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        opacity: .75;
+        text-transform: uppercase;
+        margin: 0 0 2px;
+    }
+
+    main {
+        background: $custom-bg-gradient;
+        overflow: hidden;
+    }
+}

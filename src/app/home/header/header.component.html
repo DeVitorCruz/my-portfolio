@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="top-bar top-bar_logo top-bar_spacer top-bar_button-icon" [ngClass]="{'scrolled': isScrolled}">
+    <div class="container">
+        <span class="top-bar__span1 top-bar__span1_first-logo">
+            <a href="#" mat-icon-button>
+                <mat-icon svgIcon="d"></mat-icon>
+            </a>
+        </span>
+        
+        <span class="top-bar__span2 top-bar__span2_flex-1"></span>
+        
+        <!-- Desktop Menu -->
+        <nav class="top-bar__nav" *ngIf="!isMobile">
+            <a mat-button (click)="scrollTo('home')" [ngClass]="{ active: currentSection === 'home' }">Home</a>
+            <a mat-button (click)="scrollTo('about')" [ngClass]="{ active: currentSection === 'about' }">About Me</a>
+            <a mat-button (click)="scrollTo('projects')" [ngClass]="{ active: currentSection === 'projects' }">Projects</a>
+            <a mat-button (click)="scrollTo('services')" [ngClass]="{ active: currentSection === 'services' }">Services</a>
+            <a mat-button (click)="scrollTo('contact')" [ngClass]="{ active: currentSection === 'contact' }">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button mat-icon-button color="top-bar__button1 top-bar__button1_menu" *ngIf="isMobile" (click)="toggleMobileMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        
+        <!-- Mobiele Menu Pop-up -->
+        <button mat-raised-button color="top-bar__button2 top-bar__button2_costume" *ngIf="!isMobile" (click)="scrollTo('contact')">
+            Let's Talk
+        </button>
+    </div>
+</mat-toolbar>
+
+<nav class="mobile-menu" *ngIf="isMobileMenuOpen">
+    <a mat-button (click)="scrollTo('home'); closeMobileMenu()" [ngClass]="{ active: currentSection === 'home' }">Home</a>
+    <a mat-button (click)="scrollTo('about'); closeMobileMenu()" [ngClass]="{ active: currentSection === 'about' }">About Me</a>
+    <a mat-button (click)="scrollTo('projects'); closeMobileMenu()" [ngClass]="{ active: currentSection === 'projects' }">Projects</a>
+    <a mat-button (click)="scrollTo('services'); closeMobileMenu()" [ngClass]="{ active: currentSection === 'services' }">Services</a>
+    <a mat-button (click)="scrollTo('contact'); closeMobileMenu()" [ngClass]="{ active: currentSection === 'contact' }">Contact</a>
+</nav>
